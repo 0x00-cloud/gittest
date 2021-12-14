@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send(`<h1>welcome to my first deployment</h1>`);
+});
 app.get("*", (req, res) => {
   res.render("404", {
     title: "404",
