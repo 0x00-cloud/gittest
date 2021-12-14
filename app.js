@@ -1,6 +1,14 @@
 const express = require("express");
-const app = require("express");
+const app = express();
 
-app.listen(3000, () => {
-  console.log("server is up and runnin on port 3000");
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    name: "yousef meska",
+    errorMessage: "Page not found",
+  });
+});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is up and running on port: ${PORT}`);
 });
